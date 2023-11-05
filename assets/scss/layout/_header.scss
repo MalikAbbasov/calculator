@@ -1,0 +1,84 @@
+@mixin border{
+    border: 1px solid black;
+}
+@mixin displayfl{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin dispgrid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+@mixin wh{
+    width: 100px;
+    height: 100px;
+    background-color: initial;
+    color: white;
+}
+@mixin widheig{
+    width: 400px;
+    height: 100px;
+}
+@mixin hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+body{
+    max-width: 100vw;
+    min-height: 90vh;
+    @include displayfl();
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 15%, rgba(109,29,34,1) 51%, rgba(0,0,0,1) 100%, rgba(121,9,9,1) 100%);
+}
+.calculator{
+    width: 400px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px;
+    box-shadow: 0 0  10px white;
+    }
+    .numbers{
+        width: 400px;
+        height: 80px;
+        font-size: 35px;
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+    }
+    .sira{
+        @include displayfl();
+        @include widheig();
+        @include dispgrid();
+        .btn{
+            @include displayfl();
+            @include wh();
+            @include border();
+            font-size: 25px;
+            box-shadow: 0 0  10px white;
+            &:hover{
+                @include hover()
+            }
+        }
+        .deleteAll {
+            background-color: red;
+        }
+        .opr{
+            color: yellow;
+        }
+        .equal{
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+            font-size: 25px;
+            color: rgb(53, 3, 3);
+            @include border();
+            @include displayfl();
+            &:hover{
+                @include hover();
+            }
+        }
+
+}
+
